@@ -1,0 +1,9 @@
+{
+  "defaultMovies": "discovery",
+  "api_key": "50347dfdbc09d0a2014589afce21eefd",
+  "theMovieDB_image_url": "https://image.tmdb.org/t/p/w500",
+  "theMovieDB_file_size": "w500",
+  "api_url_prefix": "https://api.themoviedb.org/3/",
+  "popular_movies_endpoint": "https://api.themoviedb.org/3/discover/movie?api_key=50347dfdbc09d0a2014589afce21eefd&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1",
+  "root_selector": "#app"
+}
