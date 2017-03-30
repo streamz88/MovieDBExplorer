@@ -1,3 +1,15 @@
+/*==============================================================================
+Update Dom
+================================================================================*/
+const renderView =  (selector, template) => {
+  let body = document.querySelector(selector)
+  body.innerHTML = template
+}
+
+/*==============================================================================
+Observable Interface Implementation
+================================================================================*/
+
 function Observable(forEach) {
   this._forEach = forEach
 }
@@ -31,4 +43,4 @@ Observable.prototype.forEach = function (observerOrOnNext, onError, onCompleted)
 }
 
 
-export { Observable }
+export { renderView, Observable }
