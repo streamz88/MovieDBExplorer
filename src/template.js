@@ -20,12 +20,20 @@ const ListView = (model) => {
 `)}
 
 const MainView  = ({model = null, error = false}) => {
+  if (!error){
     return (`
               <div class="movieDB__container">
                 <div class="movieDB__search"> ${SearchBox()}</div>
                 <div class="movieDB__movie-results"> ${ListView(model)}</div>
               </div>
             `)
-
+  } else {
+    return (`
+              <div class="movieDB__container">
+                <div class="movieDB__search"> ${SearchBox()}</div>
+                <div class="movieDB__movie-results"> No movie results.  </div>
+              </div>
+            `)
+  }
 }
 export { MainView, SearchBox, ListView }
