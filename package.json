@@ -1,0 +1,57 @@
+{
+  "private": true,
+  "dependencies": {
+    "json-loader": "^0.5.4"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "6.13.2",
+    "babel-loader": "6.2.4",
+    "babel-preset-es2015": "6.13.2",
+    "babel-preset-es2016": "6.11.3",
+    "babel-preset-stage-2": "6.13.0",
+    "babel-register": "^6.24.0",
+    "chai": "^3.5.0",
+    "css-loader": "0.23.1",
+    "eslint": "3.2.2",
+    "eslint-config-kentcdodds": "^9.0.0",
+    "ghooks": "1.3.2",
+    "http-server": "0.9.0",
+    "karma": "^1.1.2",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-mocha": "^1.1.1",
+    "karma-webpack": "^2.0.3",
+    "mocha": "^3.2.0",
+    "npm-run-all": "2.3.0",
+    "opt-cli": "1.5.1",
+    "rimraf": "2.5.4",
+    "style-loader": "0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "webpack": "2.1.0-beta.20",
+    "webpack-config-utils": "2.0.0",
+    "webpack-dev-server": "2.1.0-beta.0",
+    "webpack-validator": "2.2.7"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "opt --in pre-commit --exec \"npm run validate\""
+    }
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "webpack --env.prod -p",
+    "prebuild:dev": "rimraf dist",
+    "build:dev": "webpack --env.dev",
+    "start": "http-server",
+    "dev": "webpack-dev-server --env.dev --hot",
+    "debug": "node-nightly --inspect --debug-brk node_modules/.bin/webpack --env.debug",
+    "debug:dev": "npm run debug -- --env.dev",
+    "debug:prod": "npm run debug -- --env.prod",
+    "test": "karma start",
+    "watch:test": "npm test -- --auto-watch --no-single-run",
+    "validate": "npm-run-all --parallel lint build test",
+    "lint": "eslint ."
+  }
+}
