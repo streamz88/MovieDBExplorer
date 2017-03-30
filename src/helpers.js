@@ -1,5 +1,6 @@
 /*==============================================================================
-Update Dom
+Grabs DOM element via provisioned selector and replaces its content with the
+provisioned template
 ================================================================================*/
 const renderView =  (selector, template) => {
   let body = document.querySelector(selector)

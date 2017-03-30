@@ -3,17 +3,16 @@ import { httpService } from  './networking'
 import { ListView } from  './template'
 import { renderView } from  './helpers'
 
-const generateQuery  = terms => {
-     let query = `query=${terms}`
-     return query;
-}
-
+/*==============================================================================
+ * Queries endpoint against provisioned search terms
+ * Defaults to fetching popular-movies when query is empty
+ ==============================================================================*/
 const Search =  terms  =>{
   if (terms !== '') {
     let subscription =
       httpService({
         method: 'GET',
-        url: `${ENV.api_url_prefix}search/movie?api_key=${ENV.api_key}&language=en-US&${generateQuery(terms)}&page=1&include_adult=false`
+        url: `${ENV.api_url_prefix}search/movie?api_key=${ENV.api_key}&language=en-US&query=${terms}&page=1&include_adult=false`
       })
       .forEach(
         {
@@ -47,4 +46,4 @@ const Search =  terms  =>{
     }
 }
 
-export { generateQuery, Search }
+export { Search }

@@ -1,5 +1,7 @@
 import {Observable} from './helpers'
-
+/*==============================================================================
+ * XHR client with 'Observable' behaviour
+ ==============================================================================*/
 const httpService = options => {
   return new Observable(observer => {
     let subscribed = true
