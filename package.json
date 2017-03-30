@@ -1,9 +1,8 @@
 {
   "private": true,
-  "dependencies": {
-    "json-loader": "^0.5.4"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "json-loader": "^0.5.4",
     "babel": "^6.23.0",
     "babel-core": "6.13.2",
     "babel-loader": "6.2.4",
